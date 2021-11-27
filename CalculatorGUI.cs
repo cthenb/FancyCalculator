@@ -55,7 +55,7 @@ namespace WindowsFormsApp1
             if (_calculationType.HasValue && _totalValue.HasValue) // Did we have a previous number / calculation option?
                 value = CalculationHelper.Calculate(_totalValue.Value, InputField.Value, _calculationType.Value, out error);
             else
-                value = _totalValue ?? 0;
+                value = InputField?.Value ?? 0;
 
             if (!string.IsNullOrEmpty(error))
             {
